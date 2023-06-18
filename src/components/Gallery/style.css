@@ -1,0 +1,36 @@
+.gallery {
+    min-height: 100vh;
+  
+    color: white;
+    background-image: url("./img/gallery.jpg");
+    background-size: cover;
+    background-position: top center;
+    background-attachment: fixed;
+  
+    display: flex;
+    align-items: center;
+  }
+  
+  .gallery__content {
+    height: 100%;
+    padding: 2rem 3rem;
+    margin: 3rem 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(6px);
+  }
+  
+  .gallery__cols {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .gallery__col {
+    flex: 1;
+  }
+  
+  @media (min-width: 768px) {
+    .gallery__cols {
+      flex-direction: row;
+      gap: 2rem;
+    }
+  }
