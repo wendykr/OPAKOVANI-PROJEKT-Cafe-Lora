@@ -1,9 +1,12 @@
 import './style.css';
 
-export const Header = () => {
+export const Header = ( props ) => {
+    const { showMenu } = props;
+
     const element = document.createElement('header');
 
-    element.innerHTML = `
+    if (showMenu) {
+        element.innerHTML = `
         <div class="header__content container">
             <div class="site-logo"></div>
         
@@ -20,13 +23,36 @@ export const Header = () => {
         </div>
     `;
 
-    element.querySelector('.nav-btn').addEventListener('click', () => {
+        element.querySelector('.nav-btn').addEventListener('click', () => {
         element.querySelector('.rollout-nav').classList.toggle('nav-closed');
     })
 
     element.querySelector('.rollout-nav').addEventListener('click', () => {
         element.querySelector('.rollout-nav').classList.add('nav-closed');
     })
+    } else {
+        element.innerHTML = `
+        <div class="header__content container">
+          <div class="site-logo"></div>
+
+          <nav class="inline-nav">
+            <a href="/">Hlavní stránka</a>
+          </nav>
+
+        </div>
+        
+        </div>
+    `;
+    }
+
+
+    // element.querySelector('.nav-btn').addEventListener('click', () => {
+    //     element.querySelector('.rollout-nav').classList.toggle('nav-closed');
+    // })
+
+    // element.querySelector('.rollout-nav').addEventListener('click', () => {
+    //     element.querySelector('.rollout-nav').classList.add('nav-closed');
+    // })
 
     return element;
 }
