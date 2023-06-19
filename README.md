@@ -1,12 +1,5 @@
 # Café Lóra
 
-Cvičný projekt pro kurz Czechitas JavaScript 2.
-
-Projekt obsahuje dvě stránky s veškerým stylováním + nezbytné obrázky.
-
-
-# Café Lóra
-
 Fiktivní webový projekt semestrálního kurzu [JavaScript 2 JARO 2023](https://www.czechitas.cz/kurzy/javascript-2), na kterém si procvičíme, co jsme se dosud v JavaScriptu naučili.
 
 
