@@ -23,18 +23,10 @@ export const Drink = (props) => {
         </div>
     `;
 
-    // element.querySelector('.drink__info').append(Layer(
-    //     {
-    //         color: '#feeeca',
-    //         label: 'mléčná pěna',
-    //     }
-    // ));
-
     const listLayers = element.querySelector('.drink__info');
     listLayers.append(...layers.map((item) => Layer(item)));
 
     element.querySelector('.order-btn').addEventListener('click', (event) => {
-        console.log('click');
         event.preventDefault();
     
         fetch(`https://cafelora.kodim.app/api/me/drinks/${id}`, {
@@ -49,7 +41,6 @@ export const Drink = (props) => {
         })
           .then((response) => response.json())
           .then((data) => {
-            // console.log(data.result);
             element.replaceWith(
               Drink(
                 {
@@ -58,7 +49,6 @@ export const Drink = (props) => {
                   ordered: data.result.ordered,
                   image: data.result.image,
                   layers: data.result.layers,
-                  // ...data.result,
                 }
               )
             );

@@ -23,7 +23,6 @@ export const Order = (props) => {
         }).then((response) => response.json())
             .then((data) => {
                 const result = data.result.filter(oneOrder => oneOrder.ordered === true);
-                // element.replaceWith(Order({items: result}))
                 if (result.length === 0) {
                     element.querySelector('.empty-order').classList.remove('empty-order--hide');
                 } else {
@@ -33,12 +32,6 @@ export const Order = (props) => {
                 }
                 
             });
-    // } else if (items.length === 0) {
-    //     element.querySelector('.empty-order').classList.remove('empty-order--hide');
-    // } else {
-    //     element.querySelector('.order__items').append(
-    //         ...items.map((item) => OrderItem(item))
-    //     );
     }
 
     return element;

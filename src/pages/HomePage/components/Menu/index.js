@@ -21,7 +21,7 @@ export const Menu = (props) => {
 
     element.insertAdjacentHTML('beforeend',
         `<div class="order-detail">
-            <a href="/objednavka">Detail objednávky</a>
+            <a href="objednavka">Detail objednávky</a>
         </div>
     `);
 
@@ -33,7 +33,6 @@ export const Menu = (props) => {
             },
         }).then((response) => response.json())
             .then((data) => {
-                console.log(data.result);
                 element.replaceWith(
                     Menu({
                         drinks: data.result,
@@ -44,26 +43,6 @@ export const Menu = (props) => {
         element.querySelector('.drinks-list').append(
             ...drinks.map((drink) => Drink(drink))
         );
-
-        // element.querySelector('.drinks-list').append(Drink(
-        //     {
-        //         id: 'romano',
-        //         name: 'Romano',
-        //         ordered: false,
-        //         image: 'https://cafelora.kodim.app/assets/cups/romano.png',
-        //         layers: [
-        //         {
-        //             color: '#fbdf5b',
-        //             label: 'citrón',
-        //         },
-        //         {
-        //             color: '#613916',
-        //             label: 'espresso',
-        //         },
-        //         ]
-        //     }
-        // ));
-
     }
 
     return element;

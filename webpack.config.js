@@ -1,5 +1,8 @@
-const CopyPlugin = require('copy-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack");
+
+const publicPath = process && process.env && process.env.GITHUB_REPOSITORY ? "/"+process.env.GITHUB_REPOSITORY.split("/")[1] : ""
 
 module.exports = {
   mode: 'development',
@@ -32,12 +35,13 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/index.html',
+      template: "src/index.html",
     }),
     new CopyPlugin({
-      patterns: [
-        { from: 'public', to: '', noErrorOnMissing: true },
-      ],
+      patterns: [{ from: "public", to: "", noErrorOnMissing: true }],
+    }),
+    new webpack.DefinePlugin({
+      BASE_PATH: "'" + publicPath + "'",
     }),
   ],
 };

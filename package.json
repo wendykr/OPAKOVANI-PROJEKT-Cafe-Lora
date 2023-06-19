@@ -4,7 +4,7 @@
   "description": "Starter kit for vanilla JavaScript project",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode=production",
+    "build": "webpack --mode=production && cp dist/index.html dist/404.html",
     "start": "webpack serve --open"
   },
   "author": "",

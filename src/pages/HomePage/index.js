@@ -4,6 +4,7 @@ import { Banner } from "./components/Banner/index";
 import { Menu } from "./components/Menu/index";
 import { Gallery } from "./components/Gallery/index";
 import { Contact } from "./components/Contact/index";
+import './style.css';
 
 export const HomePage = () => {
 

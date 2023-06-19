@@ -24,35 +24,26 @@ export const Header = ( props ) => {
     `;
 
         element.querySelector('.nav-btn').addEventListener('click', () => {
-        element.querySelector('.rollout-nav').classList.toggle('nav-closed');
-    })
+            element.querySelector('.rollout-nav').classList.toggle('nav-closed');
+        });
 
-    element.querySelector('.rollout-nav').addEventListener('click', () => {
-        element.querySelector('.rollout-nav').classList.add('nav-closed');
-    })
+        element.querySelector('.rollout-nav').addEventListener('click', () => {
+            element.querySelector('.rollout-nav').classList.add('nav-closed');
+        });
     } else {
         element.innerHTML = `
-        <div class="header__content container">
-          <div class="site-logo"></div>
+            <div class="header__content container">
+            <div class="site-logo"></div>
 
-          <nav class="inline-nav">
-            <a href="/">Hlavní stránka</a>
-          </nav>
+            <nav class="inline-nav">
+                <a href="home">Hlavní stránka</a>
+            </nav>
 
-        </div>
-        
-        </div>
-    `;
+            </div>
+            
+            </div>
+        `;
     }
-
-
-    // element.querySelector('.nav-btn').addEventListener('click', () => {
-    //     element.querySelector('.rollout-nav').classList.toggle('nav-closed');
-    // })
-
-    // element.querySelector('.rollout-nav').addEventListener('click', () => {
-    //     element.querySelector('.rollout-nav').classList.add('nav-closed');
-    // })
 
     return element;
 }

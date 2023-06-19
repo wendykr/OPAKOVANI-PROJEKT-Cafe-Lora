@@ -5,9 +5,9 @@ import './style.css';
 
 const { pathname } = window.location;
 
-if (pathname === '/') {
+if (pathname === BASE_PATH + '/' || pathname === BASE_PATH + '/home') {
   document.querySelector('#app').append(HomePage());
 }
-if (pathname === '/objednavka') {
+if (pathname === BASE_PATH + '/objednavka') {
   document.querySelector('#app').append(OrderPage());
 }
