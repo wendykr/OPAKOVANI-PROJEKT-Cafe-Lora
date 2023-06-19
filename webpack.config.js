@@ -10,7 +10,7 @@ module.exports = {
   devtool: 'eval-source-map',
   output: {
     filename: 'bundle-[contenthash:6].js',
-    publicPath: '/',
+    publicPath: publicPath + '/',
     clean: true,
   },
   devServer: {
